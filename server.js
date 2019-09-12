@@ -4,7 +4,7 @@ const axios = require("axios")
 const mongoose = require('mongoose');
 const cheerio = require('cheerio')
 
-mongoose.connect('mongodb://localhost/scrapingrNews', {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost/scrapingrNews', { useUnifiedTopology: true });
 const PORT = process.env.PORT || 5000;
 
 const app = express();
@@ -15,13 +15,15 @@ app.use(express.static("public"));
 
 
 app.get("/scraper", function(req,res){
-    axios.get("https://www.washingtonpost.com").then( response => {
+    axios.get("https://www.npr.org/sections/news/")
+    .then( response => {
         const $ = cheerio.load(response.data)
         const news = [];
-        $(".top-table .flex-item").each(function(i,element){
+        $(".item").each(function(i,element){
             let item = {
-                title : $(element).find(".headline a").text(),
-                body : $(element).find(".blurb").text()
+                title : $(element).find(".title a").text(),
+                section: $(element).find(".slug a").text(),
+                body : $(element).find(".teaser a").text()
             } 
             
             news.push(item);
@@ -29,6 +31,9 @@ app.get("/scraper", function(req,res){
         console.log(news.length)
         res.json(news);
     })
+    .catch(function(error) {
+        res.json({ msg: error});;
+    });
 })
 
 app.get("/saved", function(req,res){
