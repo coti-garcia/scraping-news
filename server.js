@@ -48,8 +48,8 @@ app.get("/scraper", function(req,res){
 })
 
 app.get("/articles", function(req,res){
-    db.Article.find({}).then(function(doc){
-        res.json(doc)
+    db.Article.find({}).then(function(data){
+        res.send(data)
     }).catch(function(err) {
         res.json({ msg: err });;
     });
