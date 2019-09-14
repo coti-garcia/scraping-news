@@ -50,8 +50,11 @@ app.get("/scraper", function(req, res) {
         .each(function(i, element) {
           let item = {
             title: $(element)
-              .find(".title a")
+              .find(".title ")
               .text(),
+            link: $(element)
+              .find("a")
+              .attr("href"),
             section: $(element)
               .find(".slug a")
               .text(),

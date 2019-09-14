@@ -7,6 +7,7 @@
 p.section {
   text-transform: uppercase;
   margin-bottom: 0;
+  font-size: 12px;
 }
 
 .news {
@@ -14,6 +15,19 @@ p.section {
 }
 
 .card-header {
-  background: #297cbb;
+  background: #4a4a4a;
   color: #fff;
+}
+
+.card-header h3 a {
+  font-size: 20px;
+}
+
+.card-header a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.card-header a:hover {
+  color: #eeeeee;
 }

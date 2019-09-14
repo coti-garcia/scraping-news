@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const ArticleSchema = new Schema({
   title: String,
+  link: String,
   body: String,
   section: String,
   isSaved: Boolean,
