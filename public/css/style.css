@@ -1,0 +1,19 @@
+.jumbotron {
+  background-image: url(../images/bg.jpg);
+  background-size: cover;
+  background-position: center center;
+}
+
+p.section {
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+.news {
+  margin-bottom: 30px;
+}
+
+.card-header {
+  background: #297cbb;
+  color: #fff;
+}
