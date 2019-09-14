@@ -1,0 +1,27 @@
+{{#if articles}}
+{{#each articles}}
+{{> article}}
+{{/each}}
+{{else}}
+<div class="row">
+    <div class="col">
+        <div class="col alert alert-warning" role="alert">
+            Uh Oh. Looks like we don't have any new articles.
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                What Would You Like To Do?
+            </div>
+            <div class="card-body">
+                <button id="scrape">Try Scraping New Articles</button>
+                <a href="/saved">Go to Saved Articles</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+{{/if}}
