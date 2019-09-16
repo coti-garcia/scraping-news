@@ -44,7 +44,19 @@ p.section {
 .news .btn span {
   font-size: 12px;
 }
-footer {
-  position: absolute;
-  bottom: 0px;
+
+.note-card .card-header .btn {
+  margin-top: 0;
+}
+
+.note-card .card-header .btn-link {
+  color: #fff;
+  color: #fff;
+  float: right;
+  top: 0;
+  padding: 0;
+}
+
+.note-card .card-header .fa-long-arrow-left {
+  margin-right: 10px;
 }

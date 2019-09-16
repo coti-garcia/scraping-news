@@ -2,7 +2,8 @@ $(document).on("click", "#scrape", function() {
   $.get("/scraper", function(data) {
     console.log("scrape");
   }).then(function() {
-    location.reload(true);
+    console.log(window.location);
+    location.assign("/");
     // getArticles();
   });
 });

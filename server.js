@@ -5,7 +5,9 @@ const axios = require("axios");
 const mongoose = require("mongoose");
 const cheerio = require("cheerio");
 const db = require("./models");
-mongoose.connect("mongodb://localhost/scrapingrNews", {
+const MONGODB_URI =
+  process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+mongoose.connect(MONGODB_URI, {
   useUnifiedTopology: true
 });
 const PORT = process.env.PORT || 5000;
