@@ -107,6 +107,17 @@ app.put("/articles/:id", function(req, res) {
     });
 });
 
+app.put("/articles/saved/:id", function(req, res) {
+  const id = req.params.id;
+  db.Article.findOneAndUpdate({ _id: id }, { isSaved: false }, { new: true })
+    .then(function(data) {
+      res.send(data);
+    })
+    .catch(function(err) {
+      res.json({ msg: err });
+    });
+});
+
 app.get("/articles/:id", function(req, res) {
   const id = req.params.id;
   db.Article.findById(id)

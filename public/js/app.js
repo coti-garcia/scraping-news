@@ -17,6 +17,17 @@ $(document).on("click", "#deleteAll", function() {
   });
 });
 
+$(document).on("click", "#delete-saved", function(event) {
+  const articleId = $(this).attr("data-id");
+  $.ajax({
+    url: "/articles/saved/" + articleId,
+    method: "PUT"
+  }).then(function() {
+    location.reload(true);
+    console.log("Article Deleted");
+  });
+});
+
 $(document).on("click", "#save", function(event) {
   event.preventDefault();
   const articleId = $(this).attr("data-id");
