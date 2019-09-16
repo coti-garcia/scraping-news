@@ -107,6 +107,33 @@ app.put("/articles/:id", function(req, res) {
     });
 });
 
+app.get("/articles/:id", function(req, res) {
+  const id = req.params.id;
+  db.Article.findById(id)
+    .populate("note")
+    .then(function(data) {
+      res.send(data);
+    })
+    .catch(function(err) {
+      res.json({ msg: err });
+    });
+});
+
+app.post("/articles/:id", function(req, res) {
+  const id = req.params.id;
+  db.Note.create({
+    body: req.body.body
+  }).then(function(dbNote) {
+    db.Article.findOneAndUpdate(
+      { _id: id },
+      { $set: { note: dbNote._id } },
+      { new: true }
+    ).then(function(data) {
+      res.json(data);
+    });
+  });
+});
+
 app.listen(PORT, function() {
   console.log(`Listening on http://localhost:${PORT}`);
 });

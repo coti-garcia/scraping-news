@@ -1,7 +1,7 @@
-<div class="row news">
+<div id={{id}} class="row news">
     <div class="col">
         <div class="card">
-            <div class="card-header">
+            <div class="card-header bg-info text-light">
                 <div class="row">
                     <div class="col-8">
                         <p class="section">{{ section }}</p>
@@ -10,15 +10,15 @@
                     <div class="col-4 text-right">
                         <div class="buttons">
                             {{#if isSaved}}
-                            <button type="button" id="delete-saved" data-id="{{ id }}" class="btn btn-danger">
-                                Delete from Saved
+                            <button type="button" id="delete-saved" data-id="{{ id }}" class="btn btn-secondary">
+                                <i class="fa fa-trash-o" aria-hidden="true"></i> <span>from Saved</span>
                             </button>
-                            <button type="button" id="notes" data-id="{{ id }}" class="btn btn-danger">
-                                Article Notes
+                            <button type="button" id="notes" data-id="{{ id }}" class="btn btn-dark">
+                                <i class="fa fa-folder-open-o" aria-hidden="true"></i> <span>Article Notes</span>
                             </button>
                             {{else}}
-                            <button type="button" id="save" data-id="{{ id }}" class="btn btn-danger">
-                                Save Article
+                            <button type="button" id="save" data-id="{{ id }}" class="btn btn-warning">
+                                <i class="fa fa-star-o" aria-hidden="true"></i> <span>Save Article</span>
                             </button>
                             {{/if}}
                         </div>

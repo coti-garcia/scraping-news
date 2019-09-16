@@ -1,33 +1,50 @@
+body {
+  min-height: 100vh;
+}
 .jumbotron {
   background-image: url(../images/bg.jpg);
   background-size: cover;
   background-position: center center;
+  box-shadow: 1px 2px 10px;
+  border-radius: 0;
 }
-
 p.section {
   text-transform: uppercase;
   margin-bottom: 0;
   font-size: 12px;
 }
-
 .news {
   margin-bottom: 30px;
 }
-
-.card-header {
-  background: #4a4a4a;
-  color: #fff;
-}
-
 .card-header h3 a {
   font-size: 20px;
 }
-
 .card-header a {
   color: #fff;
   text-decoration: none;
 }
-
 .card-header a:hover {
   color: #eeeeee;
+}
+.note-card textarea {
+  width: 100%;
+  font-size: 14px;
+}
+.note-card p {
+  margin-bottom: 0;
+}
+.note-card hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.news .btn {
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+.news .btn span {
+  font-size: 12px;
+}
+footer {
+  position: absolute;
+  bottom: 0px;
 }
